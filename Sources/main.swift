@@ -72,7 +72,7 @@ class Calculator {
             total = self.total * input
             break
         case "/":
-            let temp  = total / input
+            let temp = total / input
             if temp.isNaN || temp.isInfinite {
                 return (false, 0.0, "Error cannot divide by zero")
             } else {
