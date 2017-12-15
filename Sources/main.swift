@@ -64,30 +64,25 @@ class Calculator {
         switch operation {
         case "+":
             total = self.total + input
-            break
         case "-":
             total = self.total - input
-            break
         case "*":
             total = self.total * input
-            break
         case "/":
             let temp = total / input
             if temp.isNaN || temp.isInfinite {
                 return (false, 0.0, "Error cannot divide by zero")
             } else {
                 total = temp
-                break
             }
         case "^":
             if input < 0 {
                 return (false, 0.0, "Error cannot use negative exponents")
             } else {
                 total = pow(self.total, input)
-                break
             }
         default:
-            break
+            return (false, 0.0, "Error not an operator")
         }
         return (true, total, "success")
     }
